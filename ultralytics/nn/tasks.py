@@ -24,8 +24,8 @@ from ultralytics.nn.backbone.mobilenetv4 import *
 from ultralytics.nn.attention.SCSA import SCSA
 from ultralytics.nn.attention.EMCA import EMCA_attention
 from ultralytics.nn.modules.conv import AKConv, Concat_dropoutV2
-from ultralytics.nn.conv.kan_conv import C2f_KAN
-from ultralytics.nn.conv.fast_kan_conv import FastKANConvLayer
+from ultralytics.nn.extra_modules.kan_convs import *
+from ultralytics.nn.extra_modules.block import C2f_KAN
 ###  xuhaowen
 try:
     import thop
@@ -833,13 +833,13 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
         n = n_ = max(round(n * depth), 1) if n > 1 else n  # depth gain
         if m in (Classify, Conv, ConvTranspose, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, Focus,
                  BottleneckCSP, C1, C2, C2f, C3, C3TR, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d, C3x, RepC3,
-                 SCSA, C2f_KAN, FastKANConvLayer):
+                 SCSA, C2f_KAN, KAGNConv2DLayer):
             c1, c2 = ch[f], args[0]
             if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
                 c2 = make_divisible(min(c2, max_channels) * width, 8)
 
             args = [c1, c2, *args[1:]]
-            if m in (BottleneckCSP, C1, C2, C2f, C3, C3TR, C3Ghost, C3x, RepC3, C2f_KAN, FastKANConvLayer):
+            if m in (BottleneckCSP, C1, C2, C2f, C3, C3TR, C3Ghost, C3x, RepC3, C2f_KAN, KAGNConv2DLayer):
                 args.insert(2, n)  # number of repeats
                 n = 1
         elif m is AIFI:

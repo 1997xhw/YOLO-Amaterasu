@@ -3,7 +3,7 @@ import torch
 from torch import nn
 from einops.layers.torch import Rearrange
 from ..modules import Conv
-from ultralytics.utils.torch_utils import fuse_conv_and_bn
+from ultralytics.yolo.utils.torch_utils import fuse_conv_and_bn
 
 class Conv2d_cd(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=3, stride=1,

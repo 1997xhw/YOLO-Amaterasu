@@ -15,7 +15,7 @@ sys.path.insert(0, "D:\\yolopm-all\\LOv8-multi-task\\ultralytics")
 
 ###############################
 # xhw
-model = YOLO('D:\\yolopm-all\\YOLOv8-multi-task-paving\\ultralytics\\models\\v8\\yolov8-m-xhw-SCSA-concatV2.yaml',
+model = YOLO(r'D:\\yolopm-all\\YOLO-Amaterasu\\ultralytics\\models\\v8\\yolov8-m-xhw-SCSA-mbnv4.yaml',
              task='multi')  # build a new model from YAML
 ###############################
 
@@ -27,12 +27,12 @@ model = YOLO('D:\\yolopm-all\\YOLOv8-multi-task-paving\\ultralytics\\models\\v8\
 # model.train(data='D:\\yolopm-all\\YOLOv8-multi-task\\ultralytics\\datasets\\bdd-multi.yaml', batch=12, epochs=300, imgsz=(640,640), device=[0], name='yolopm', val=True, task='multi',classes=[2,3,4,9,10,11],combine_class=[2,3,4,9],single_cls=True)
 
 
-model.train(data='D:\\yolopm-all\\YOLOv8-multi-task-paving\\ultralytics\\datasets\\multi-paving-xhw.yaml',
+model.train(data=r'D:\\yolopm-all\\YOLO-Amaterasu\\ultralytics\\datasets\\multi-paving-xhw.yaml',
             batch=16,
             epochs=2,
             imgsz=(640, 640),
             device=[0],
-            name='MultiPavingEye',
+            name='MultiPavingEye-mbnv4',
             val=True,
             task='multi',
             classes=[0, 1, 2, 3],

@@ -3,7 +3,7 @@ from torch import nn, Tensor, LongTensor
 from torch.nn import init
 import torch.nn.functional as F
 import torchvision
-from efficientnet_pytorch.model import MemoryEfficientSwish
+# from efficientnet_pytorch.model import MemoryEfficientSwish
 
 import itertools
 import einops
@@ -764,7 +764,7 @@ class AttnMap(nn.Module):
         super().__init__()
         self.act_block = nn.Sequential(
                             nn.Conv2d(dim, dim, 1, 1, 0),
-                            MemoryEfficientSwish(),
+                            # MemoryEfficientSwish(),
                             nn.Conv2d(dim, dim, 1, 1, 0)
                          )
     def forward(self, x):

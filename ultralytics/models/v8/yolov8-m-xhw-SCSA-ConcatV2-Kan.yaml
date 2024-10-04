@@ -25,47 +25,48 @@ backbone:
   - [-1, 1, Conv, [256, 3, 2]]  # 3-P3/8
   - [-1, 6, C2f, [256, True]]
   - [-1, 1, Conv, [512, 3, 2]]  # 5-P4/16
-  - [-1, 6, C2f, [512, True]]
+#  - [-1, 6, C2f, [512, True]]
+  - [-1, 6, C2f_KAN, [512, 'KAGNConv2DLayer', True]]
   - [-1, 1, Conv, [1024, 3, 2]]  # 7-P5/32
-  - [-1, 3, C2f, [1024, True]]
+  - [-1, 3, C2f_KAN, [1024, 'KAGNConv2DLayer', True]]
   - [-1, 1, SPPF, [1024, 5]]  # 9
   - [-1, 1, SCSA, [1024]] # 10 SCSA
 
 # YOLOv8.0n head
 head:
   - [-1, 1, nn.Upsample, [None, 2, 'nearest']]
-  - [[-1, 6], 1, Concat, [1]]  # cat backbone P4
-  - [-1, 3, C2f, [512]]  # 13
+  - [[-1, 6], 1, Concat_dropoutV2, [1]]  # cat backbone P4
+  - [-1, 3, C2f, [512]]  # 12
 
   - [-1, 1, nn.Upsample, [None, 2, 'nearest']]
   - [[-1, 4], 1, Concat, [1]]  # cat backbone P3
-  - [-1, 3, C2f, [256]]  # 16 (P3/8-small)
+  - [-1, 3, C2f, [256]]  # 15 (P3/8-small)
 
   - [-1, 1, Conv, [256, 3, 2]]
-  - [[-1, 13], 1, Concat, [1]]  # cat head P4
-  - [-1, 3, C2f, [512]]  # 19 (P4/16-medium)
+  - [[-1, 12], 1, Concat, [1]]  # cat head P4
+  - [-1, 3, C2f, [512]]  # 18 (P4/16-medium)
 
   - [-1, 1, Conv, [512, 3, 2]]
   - [[-1, 9], 1, Concat, [1]]  # cat head P5
-  - [-1, 3, C2f, [1024]]  # 22 (P5/32-large)
+  - [-1, 3, C2f, [1024]]  # 21 (P5/32-large)
   
   
  # drivable
   - [9, 1, nn.Upsample, [None, 2, 'nearest']]
   - [[-1, 6], 1, Concat_dropoutV2, [1]]  # cat backbone P4
-  - [-1, 3, C2f, [512]]  # 25
+  - [-1, 3, C2f, [512]]  # 24
 
   - [-1, 1, nn.Upsample, [None, 2, 'nearest']]
   - [[-1, 4], 1, Concat_dropoutV2, [1]]  # cat backbone P3
-  - [-1, 3, C2f, [256]]  # 28 (P3/8-small)
+  - [-1, 3, C2f, [256]]  # 27 (P3/8-small)
  
   - [-1, 1, nn.Upsample, [None, 2, 'nearest']]  # 30 for drivable segmentation
   - [[-1, 2], 1, Concat_dropoutV2, [1]]
-  - [-1, 3, C2f, [128]]  # 31 (P2)
+  - [-1, 3, C2f, [128]]  # 30 (P2)
   
   - [-1, 1, nn.Upsample, [None, 2, 'nearest']] #
   - [[-1, 0], 1, Concat_dropoutV2, [1]]
-  - [-1, 3, C2f, [64]]  # 34 (P1)
+  - [-1, 3, C2f, [64]]  # 33 (P1)
 
  
  
