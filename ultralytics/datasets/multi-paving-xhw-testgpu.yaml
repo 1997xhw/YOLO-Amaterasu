@@ -1,0 +1,36 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+#path: /data/jiayuan/BDDcoco/yolo_v8_toy  # dataset root dir
+#path: /data/jiayuan/yolo8_multi  # dataset root dir
+path: D:\\yolopm-all\\all\\1004\\paving  # dataset root dir
+
+# Train/val/test image paths for all tasks
+train: images/train  # train images for object detection (relative to 'path')
+
+
+val: images/val  # val images for object detection (relative to 'path')
+
+
+test: images/val  # test images for object detection (relative to 'path')
+
+labels_list:
+  - det
+  - seg
+#  - detection-object
+#  - seg-drivable-10
+#  - seg-lane-11
+
+tnc: 4  # number of classes 总任务数
+nc_list: [3,1] # 每个任务的类别数。
+map: [None,{'0':'0'}]
+
+# Classes for all tasks
+names:
+  0: paving
+  1: person
+  2: cycle
+  3: vehicle
+#  4: animal
+#  5: obstacle
+
+
+

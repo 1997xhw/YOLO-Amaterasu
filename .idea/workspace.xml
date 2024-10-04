@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="656e3205-dab5-45cf-b8cc-16b76c9e1b2a" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/ultralytics/models/v8/yolov8-m-xhw-SCSA-ConcatV2-Kan.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/models/v8/yolov8-m-xhw-SCSA-ConcatV2.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/models/v8/yolov8-m-xhw-SCSA-ConcatV2.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/models/v8/yolov8-m-xhw-SCSA-mbnv4.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/models/v8/yolov8-m-xhw-SCSA-mbnv4.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/nn/extra_modules/attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/nn/extra_modules/attention.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/nn/extra_modules/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/nn/extra_modules/block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/nn/extra_modules/deconv.py" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/nn/extra_modules/deconv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/nn/extra_modules/head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/nn/extra_modules/head.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/nn/modules/conv.py" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/nn/modules/conv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/nn/modules/head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/nn/modules/head.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/nn/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/nn/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ultralytics/datasets/bdd-multi-xhw.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/datasets/amaterasu-xhw.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ultralytics/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ultralytics/yolo/utils/tal.py" beforeDir="false" afterPath="$PROJECT_DIR$/ultralytics/yolo/utils/tal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +30,7 @@
     "Python.train.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/yolopm-all/YOLO-Amaterasu/ultralytics/models/v8",
+    "last_opened_file_path": "D:/yolopm-all/YOLO-Amaterasu/ultralytics/datasets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +41,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\yolopm-all\YOLO-Amaterasu\ultralytics\datasets" />
       <recent name="D:\yolopm-all\YOLO-Amaterasu\ultralytics\models\v8" />
       <recent name="D:\yolopm-all\YOLO-Amaterasu\ultralytics" />
     </key>
@@ -101,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1728065936387</updated>
-      <workItem from="1728065937459" duration="5108000" />
+      <workItem from="1728065937459" duration="5859000" />
     </task>
     <servers />
   </component>
